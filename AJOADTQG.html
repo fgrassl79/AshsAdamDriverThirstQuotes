@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ash's John Oliver Adam Driver Thirst Quote Generator</h2>
+
+<p id="output">Click my button, you fantastic human</p>
+
+<button type="button" onclick="generateQuote()">Thirst</button>
+
+<script>
+//This is where you fill in the lists
+
+// This first list needs the [] around it, and a false if its just a single statement, and true if it continues with a body part
+
+const instruction = [
+                     ["Tie my fingers in a square knot",false],
+                     ["Choke-slam me to Hell",false],
+					 ["Jam your mandible claw down my throat", false],
+					 ["Slap a restraining order on me", false],
+					 ["Beg me to stop", false],
+					 ["Scratch my sofa", false],
+					 ["Eat my toilet paper", false],
+					 ["Sneeze in my McFlurry", false],
+					 ["Punch a hole in me like a 'Marriage Story' wall", false],
+                     ["Collapse on",true],
+                     ["Crush",true],
+					 ["Dislocate", true],
+					 ["Pull my heart out through", true],
+					 ["Impale", true],
+					 ["Ravage", true],
+					 ["Step on", true],
+					 ["Break", true],
+					 ["Shatter", true],
+					 ["Snap off", true],
+					 ["Demolish", true],
+					 ["Explode", true],
+                     
+                    ];
+                    
+const bodyPart = ["ankles",
+                  "chest",
+                  "ribcage",
+                  "ear",
+				  "brain",
+				  "lungs",
+				  "throat",
+				  "fingers",
+				  "knees",
+				  "toes",
+				  "larynx",
+                  ];
+                  
+const adjective = ["rusty", 
+                   "nasty",
+				   "emotionally unavailable",
+				   "impenetrable",
+				   "load-bearing",
+				   "irredeemable",
+				   "forlorn",
+				   "menacing",
+				   "purring",
+				   "fuzzy",
+				   "meaty",
+				   "unacceptable",
+				   "pensive",
+				   "relentless",
+				   "rudely large",
+				   "brooding",
+				   "big",
+				   "fuckable",
+				   "unwashed",
+				   "unwieldy",
+                  ];
+                   
+const noun = ["cello",
+              "water tower",
+			  "barrier",
+			  "behemoth",
+			  "shed",
+			  "steer",
+			  "block",
+			  "obstacle",
+			  "mountain",
+			  "landslide",
+			  "oak tree",
+			  "monstrosity",
+			  "bison",
+			  "hillock",
+			  "man",
+			  "redwood",
+			  "buffalo",
+			  "boulder",
+			  "human wall",
+			 
+             ];
+
+//Everything after that is the program :)
+
+function randomIndex(myArray) {
+    return myArray[Math.floor(Math.random() * myArray.length)];
+}
+
+function generateQuote() {
+
+  let output;
+  let x;
+  
+  x=randomIndex(instruction); //Pick random instruction
+ 
+  output = x[0];
+    
+  if (x[1]) { //Check if random instruction is default case, ignore otherwise
+    output += " my " + randomIndex(bodyPart);
+  }
+  
+  output += ", you " + randomIndex(adjective) + " " + randomIndex(noun);
+  
+  document.getElementById("output").innerHTML = output;
+}
+</script>
+
+</body>
+</html> 
+
+
+</body>
+</html> 
